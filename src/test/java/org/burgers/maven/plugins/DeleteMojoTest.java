@@ -31,6 +31,25 @@ public class DeleteMojoTest {
     }
 
     @Test
+    public void execute_no_files() {
+        try{
+            mojo.execute();
+        }catch (MojoExecutionException e){
+            assertTrue(e.getMessage().equals("You must configure at least one file to delete."));
+        }
+    }
+
+    @Test
+    public void execute_no_files_empty_array() {
+        try{
+            mojo.setFiles(new File[]{});
+            mojo.execute();
+        }catch (MojoExecutionException e){
+            assertTrue(e.getMessage().equals("You must configure at least one file to delete."));
+        }
+    }
+
+    @Test
     public void execute_delete_directory()throws MojoExecutionException {
         File directory = new File(tempDir, "myDirectory");
         directory.mkdir();

@@ -1,6 +1,7 @@
 package org.burgers.maven.plugins;
 
 import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
 
 import java.io.File;
 
@@ -14,10 +15,14 @@ public class DeleteMojo extends AbstractMojo {
      */
     private File[] files;
 
-    public void execute() {
-        for (File file : files) {
-            if (file.isDirectory()) deleteDirectory(file);
-            else file.delete();
+    public void execute() throws MojoExecutionException{
+        if (files == null || files.length == 0) {
+            throw new MojoExecutionException("You must configure at least one file to delete.");
+        } else {
+            for (File file : files) {
+                if (file.isDirectory()) deleteDirectory(file);
+                else file.delete();
+            }
         }
     }
 
