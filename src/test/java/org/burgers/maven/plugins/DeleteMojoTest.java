@@ -69,7 +69,7 @@ public class DeleteMojoTest {
         File childFile = new File(childDir, "child.txt");
         writeToFile(childFile, "c");
 
-        mojo.setFiles(new File[]{grandParentDir, grandParentFile, parentDir, parentFile, childDir, childFile});
+        mojo.setFiles(new File[]{grandParentDir});
         mojo.execute();
         assertTrue(!grandParentDir.exists());
         assertTrue(!grandParentFile.exists());
