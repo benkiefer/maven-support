@@ -1,4 +1,4 @@
-package org.burgers.maven.plugins;
+package org.burgers.maven.support.plugins;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
