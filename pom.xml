@@ -12,6 +12,8 @@
     <modules>
         <module>maven-support-plugins</module>
         <module>parent</module>
+        <module>enforcer-rules</module>
+        <module>integration-tests</module>
     </modules>
 
 </project>
