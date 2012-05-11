@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.springframework.jmx.support.MBeanServerConnectionFactoryBean;
 import javax.management.MBeanServerConnection;
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

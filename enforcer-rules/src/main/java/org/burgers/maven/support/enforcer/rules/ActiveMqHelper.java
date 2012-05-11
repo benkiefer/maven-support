@@ -3,7 +3,6 @@ package org.burgers.maven.support.enforcer.rules;
 import org.springframework.jmx.support.MBeanServerConnectionFactoryBean;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class ActiveMqHelper {
     private MBeanServerConnectionFactoryBean mBean = new MBeanServerConnectionFactoryBean();

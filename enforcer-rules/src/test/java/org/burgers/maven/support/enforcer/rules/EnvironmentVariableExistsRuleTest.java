@@ -4,11 +4,6 @@ import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-
 import static junit.framework.Assert.*;
 import static org.mockito.Mockito.*;
 

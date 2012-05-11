@@ -5,8 +5,8 @@ import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 
 public class ActiveMqAvailableRule implements EnforcerRule {
-    String activeMqUrl = "service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi";
-    ActiveMqHelper helper = new ActiveMqHelper();
+    private String activeMqUrl = "service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi";
+    private ActiveMqHelper helper = new ActiveMqHelper();
 
     public void execute(EnforcerRuleHelper enforcerRuleHelper) throws EnforcerRuleException {
         try{
