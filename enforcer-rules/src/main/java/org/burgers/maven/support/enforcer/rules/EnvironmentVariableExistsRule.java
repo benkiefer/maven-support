@@ -3,7 +3,6 @@ package org.burgers.maven.support.enforcer.rules;
 import org.apache.maven.enforcer.rule.api.EnforcerRule;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
-import org.codehaus.plexus.component.repository.exception.ComponentLookupException;
 
 public class EnvironmentVariableExistsRule implements EnforcerRule {
     private String environmentVariable;
