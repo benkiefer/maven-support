@@ -25,6 +25,24 @@ public class EnvironmentVariableExistsRuleTest {
     }
 
     @Test
+    public void execute_missing_required_parameters() throws Exception {
+        try{
+            rule.execute(helper);
+            fail("Shouldn't get here");
+        } catch (EnforcerRuleException e){
+            assertEquals(e.getMessage(), "Must have either environmentVariable or environmentVariables attributes defined.");
+        }
+        verifyZeroInteractions(helper);
+    }
+
+    @Test
+    public void execute_multiple_variables() throws Exception {
+        rule.setEnvironmentVariables(new String[]{"MAVEN_HOME", "JAVA_HOME"});
+        rule.execute(helper);
+        verifyZeroInteractions(helper);
+    }
+
+    @Test
     public void execute_variable_not_found() throws Exception {
         rule.setEnvironmentVariable("DOES_NOT_EXIST");
         try{

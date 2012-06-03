@@ -6,10 +6,29 @@ import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
 
 public class EnvironmentVariableExistsRule implements EnforcerRule {
     private String environmentVariable;
+    private String[] environmentVariables;
 
     public void execute(EnforcerRuleHelper enforcerRuleHelper) throws EnforcerRuleException {
-        if (!System.getenv().keySet().contains(environmentVariable)){
-           throw new EnforcerRuleException("Environment variable: " + environmentVariable + " does not exist.");
+        verifyState();
+        if (environmentVariables != null && environmentVariables.length > 0){
+            for (String variable : environmentVariables) {
+                checkForEnvironmentVariable(variable);
+            }
+        }
+        if (environmentVariable != null){
+            checkForEnvironmentVariable(environmentVariable);
+        }
+    }
+
+    private void verifyState() throws EnforcerRuleException {
+        if (environmentVariable == null && environmentVariables == null){
+            throw new EnforcerRuleException("Must have either environmentVariable or environmentVariables attributes defined.");
+        }
+    }
+
+    private void checkForEnvironmentVariable(String variable) throws EnforcerRuleException {
+        if (!System.getenv().keySet().contains(variable)){
+           throw new EnforcerRuleException("Environment variable: " + variable + " does not exist.");
         }
     }
 
@@ -27,5 +46,9 @@ public class EnvironmentVariableExistsRule implements EnforcerRule {
 
     public void setEnvironmentVariable(String environmentVariable) {
         this.environmentVariable = environmentVariable;
+    }
+
+    public void setEnvironmentVariables(String[] environmentVariables) {
+        this.environmentVariables = environmentVariables;
     }
 }

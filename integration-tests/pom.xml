@@ -35,7 +35,10 @@
                             <rules>
                                 <environmentVariableRule
                                         implementation="org.burgers.maven.support.enforcer.rules.EnvironmentVariableExistsRule">
-                                    <environmentVariable>MAVEN_HOME</environmentVariable>
+                                    <environmentVariables>
+                                        <environmentVariable>MAVEN_HOME</environmentVariable>
+                                        <environmentVariable>JAVA_HOME</environmentVariable>
+                                    </environmentVariables>
                                 </environmentVariableRule>
                             </rules>
                         </configuration>
