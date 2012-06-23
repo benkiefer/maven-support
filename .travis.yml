@@ -1,6 +1,9 @@
 language: java
 script: mvn -q clean verify
 
+env:
+  - MAVEN_HOME=foo JAVA_HOME=bar
+
 branches:
   only:
     - master
