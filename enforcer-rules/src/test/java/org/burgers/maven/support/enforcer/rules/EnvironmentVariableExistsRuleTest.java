@@ -19,7 +19,7 @@ public class EnvironmentVariableExistsRuleTest {
 
     @Test
     public void execute() throws Exception {
-        rule.setEnvironmentVariable("MAVEN_HOME");
+        rule.setEnvironmentVariable("JAVA_HOME");
         rule.execute(helper);
         verifyZeroInteractions(helper);
     }
