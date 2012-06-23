@@ -37,7 +37,7 @@ public class EnvironmentVariableExistsRuleTest {
 
     @Test
     public void execute_multiple_variables() throws Exception {
-        rule.setEnvironmentVariables(new String[]{"MAVEN_HOME", "JAVA_HOME"});
+        rule.setEnvironmentVariables(new String[]{"JAVA_HOME"});
         rule.execute(helper);
         verifyZeroInteractions(helper);
     }
