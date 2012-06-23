@@ -36,7 +36,6 @@
                                 <environmentVariableRule
                                         implementation="org.burgers.maven.support.enforcer.rules.EnvironmentVariableExistsRule">
                                     <environmentVariables>
-                                        <environmentVariable>MAVEN_HOME</environmentVariable>
                                         <environmentVariable>JAVA_HOME</environmentVariable>
                                     </environmentVariables>
                                 </environmentVariableRule>
