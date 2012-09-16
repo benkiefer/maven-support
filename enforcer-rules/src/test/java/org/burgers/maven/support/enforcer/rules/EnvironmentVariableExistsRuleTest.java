@@ -4,8 +4,10 @@ import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
 import org.junit.Before;
 import org.junit.Test;
+
 import static junit.framework.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verifyZeroInteractions;
 
 public class EnvironmentVariableExistsRuleTest {
     EnvironmentVariableExistsRule rule;

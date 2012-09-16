@@ -1,20 +1,15 @@
 package org.burgers.maven.support.enforcer.rules;
 
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
-import org.junit.Before;
-
-import static junit.framework.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import org.junit.Test;
-
-import static org.mockito.Mockito.verify;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.doThrow;
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
+import static org.mockito.Mockito.*;
 
 public class ActiveMqAvailableRuleTest  {
     ActiveMqAvailableRule rule;
